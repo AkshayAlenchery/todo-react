@@ -4,8 +4,15 @@ const ObjectId = Schema.Types.ObjectId
 
 const todoSchema = new Schema({
   listId: ObjectId,
-  listName: String,
-  tasks: []
+  listName: {
+    type: String,
+    required: true
+  },
+  tasks: [],
+  createdOn: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 const Todo = mongoose.model('todos', todoSchema)

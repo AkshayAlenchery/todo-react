@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 
 const todoSchema = new Schema({
-  listId: ObjectId,
   listName: {
     type: String,
     required: true

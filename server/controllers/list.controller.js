@@ -1,4 +1,4 @@
-const todoModel = require('../models/todo.schema')
+const TodoModel = require('../models/todo.schema')
 
 /**
  * Create a new list - POST
@@ -7,7 +7,7 @@ const todoModel = require('../models/todo.schema')
  */
 const createNewList = async listName => {
   try {
-    const todo = new todoModel()
+    const todo = new TodoModel()
     todo.listName = listName
     await todo.save()
     return todo
@@ -23,7 +23,7 @@ const createNewList = async listName => {
  */
 const loadAllLists = async () => {
   try {
-    return await todoModel.find()
+    return await TodoModel.find()
   } catch (err) {
     console.log(err)
     return false
@@ -39,7 +39,7 @@ const loadAllLists = async () => {
 const updateList = async (listId, newListName) => {
   try {
     if (!listId.match(/^[0-9a-fA-F]{24}$/)) return []
-    const list = await todoModel.findOne({ _id: listId })
+    const list = await TodoModel.findOne({ _id: listId })
     if (!list) return []
     list.listName = newListName
     await list.save()
@@ -58,7 +58,7 @@ const updateList = async (listId, newListName) => {
 const deleteList = async listId => {
   try {
     if (!listId.match(/^[0-9a-fA-F]{24}$/)) return []
-    const list = await todoModel.findOne({ _id: listId })
+    const list = await TodoModel.findOne({ _id: listId })
     if (!list) return []
     await list.remove()
     return [list]

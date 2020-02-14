@@ -7,8 +7,7 @@ const listController = require('../controllers/list.controller')
  * POST /api/v3.0/list
  */
 Router.post('/', async (req, res) => {
-  const { listName } = req.body
-  const result = await listController.createNewList(listName)
+  const result = await listController.createNewList(req.body.name)
   if (result) return res.status(200).json(result)
   res.status(500).json({
     type: 'Error',

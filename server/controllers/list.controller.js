@@ -23,7 +23,7 @@ const createNewList = async listName => {
  */
 const loadAllLists = async () => {
   try {
-    return await TodoModel.find({}, { listName: 1 })
+    return await TodoModel.find({}, { name: 1 })
   } catch (err) {
     console.log(err)
     return false

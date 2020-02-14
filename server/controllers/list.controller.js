@@ -8,7 +8,7 @@ const TodoModel = require('../models/todo.schema')
 const createNewList = async listName => {
   try {
     const todo = new TodoModel()
-    todo.listName = listName
+    todo.name = listName
     await todo.save()
     return todo
   } catch (err) {

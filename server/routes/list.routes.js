@@ -37,7 +37,7 @@ Router.get('/', async (req, res) => {
  * PUT /api/v3.0/list/:listId
  */
 Router.put('/:listId', async (req, res) => {
-  const result = await listController.updateList(req.params.listId, req.body.listName)
+  const result = await listController.updateList(req.params.listId, req.body.name)
   if (!result) {
     return res.status(500).json({
       type: 'Error',

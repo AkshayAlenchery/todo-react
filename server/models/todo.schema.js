@@ -6,7 +6,29 @@ const todoSchema = new Schema({
     type: String,
     required: true
   },
-  tasks: [],
+  tasks: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      completed: {
+        type: Boolean,
+        default: false
+      },
+      priority: {
+        type: Number,
+        default: 0
+      },
+      scheduled: {
+        type: String,
+        default: false
+      },
+      note: {
+        type: String
+      }
+    }
+  ],
   createdOn: {
     type: Date,
     default: Date.now

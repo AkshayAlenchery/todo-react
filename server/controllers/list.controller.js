@@ -41,7 +41,7 @@ const updateList = async (listId, newListName) => {
     if (!listId.match(/^[0-9a-fA-F]{24}$/)) return []
     const list = await TodoModel.findOne({ _id: listId })
     if (!list) return []
-    list.listName = newListName
+    list.name = newListName
     await list.save()
     return [list]
   } catch (err) {

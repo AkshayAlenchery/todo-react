@@ -21,7 +21,13 @@ Router.get('/:listId', async (req, res) => {
       message: 'The list you are looking for is not available'
     })
   }
-  res.status(200).json({ taskCount: result.tasks.length, tasks: result.tasks })
+  res
+    .status(200)
+    .json({
+      list: { _id: result._id, name: result.name },
+      taskCount: result.tasks.length,
+      tasks: result.tasks
+    })
 })
 
 /**

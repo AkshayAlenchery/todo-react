@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios'
 import './list.css'
 
-function List() {
+function List(props) {
   const [lists, setLists] = useState([])
   const [listInput, setListInput] = useState('')
   const [searchOutput, setSearchOutput] = useState([])
@@ -22,6 +22,7 @@ function List() {
       setSearchOutput(resp.data.lists)
     } catch (err) {
       console.log(err)
+      props.showMsg({ type: 'error', message: 'There was an issue. Please try again later' })
     }
   }
 
@@ -59,22 +60,26 @@ function List() {
       setLists(newLists)
       setSearchOutput(newLists)
       setListInput('')
+      props.showMsg({ type: 'success', message: listInput + ' created successfully' })
     } catch (err) {
       console.log(err)
+      props.showMsg({ type: 'error', message: 'Error while creating list. Try again later' })
     }
   }
 
   const deleteTask = async id => {
     try {
-      await Axios({
+      const resp = await Axios({
         method: 'DELETE',
         url: 'http://localhost:5500/api/v3.0/list/' + id
       })
       const tempState = lists.filter(list => list._id !== id)
       setSearchOutput(tempState)
       setLists(tempState)
+      props.showMsg({ type: 'success', message: resp.data.list.name + ' deleted successfully' })
     } catch (err) {
       console.log(err)
+      props.showMsg({ type: 'error', message: 'Error while deleting list. Try again later' })
     }
   }
 
@@ -93,12 +98,12 @@ function List() {
       </div>
       <div id='lists'>
         {!searchOutput.length ? (
-          <p>No lists present</p>
+          <p className='no-list'>No lists present</p>
         ) : (
           searchOutput.map(list => (
             <div className='list' key={list._id}>
               <Link to={`tasks/${list._id}`}>{list.name}</Link>
-              <FontAwesomeIcon icon={faTrash} onClick={() => deleteTask(list._id)} />
+              <FontAwesomeIcon icon={faTrashAlt} onClick={() => deleteTask(list._id)} />
             </div>
           ))
         )}

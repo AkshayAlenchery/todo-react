@@ -1,5 +1,13 @@
 #list-container {
-  width: 300px;
+  width: 400px;
+  background: #fff;
+  margin: 50px auto;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+#list-add-form {
+  padding: 20px 20px 5px 20px;
 }
 
 #list-add-form form {
@@ -8,16 +16,44 @@
 
 #list-add-form input {
   flex: 1;
+  padding: 10px;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+#lists {
+  padding: 10px 20px 15px 20px;
 }
 
 .list {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 35px;
+  padding: 0 5px;
+}
+
+.list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+}
+
+.list svg {
+  font-size: 0.8em;
+  color: red;
+  cursor: pointer;
+}
+
+.no-list {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
 }
 
 .error {
-  border: 1px solid red;
+  border: 1px solid red !important;
 }
 
 .error::placeholder {

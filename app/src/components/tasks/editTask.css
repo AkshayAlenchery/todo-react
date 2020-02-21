@@ -1,0 +1,103 @@
+#edit-task-ctnr {
+  width: 500px;
+  background: #fff;
+  margin: auto;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+#edit-header {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+#edit-header h3 {
+  font-size: 1em;
+  color: #333;
+}
+
+#edit-header svg {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#edit-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+#edit-container input[type='text'] {
+  flex: 1;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#input-row input[type='date'] {
+  width: 47%;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  padding: 10px;
+}
+
+#input-row select {
+  width: 47%;
+  height: 39.55px;
+  background: #fff;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+#edit-container textarea {
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+#input-row select:disabled {
+  background: #f7f7f7;
+}
+#input-row input[type='date']:disabled {
+  background: #f7f7f7;
+}
+#edit-container input[type='text']:disabled {
+  background: #f7f7f7;
+}
+#edit-container textarea:disabled {
+  background: #f7f7f7;
+}
+
+.dlt-btn {
+  padding: 10px !important;
+  background: white;
+  border: 1px solid #f5b7b1;
+  color: red;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.error {
+  border: 1px solid #f5b7b1 !important;
+}
+
+.error::placeholder {
+  color: red;
+}

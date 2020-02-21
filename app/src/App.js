@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import List from './components/list/AllList'
-import Task from './components/tasks/AllTask'
+import List from './components/list/lists'
+import Task from './components/tasks/tasks'
 import NotFound from './components/404/NotFound'
 
 function App() {

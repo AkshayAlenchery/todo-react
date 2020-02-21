@@ -1,0 +1,90 @@
+#tasks-container {
+  width: 500px;
+  background: #fff;
+  margin: 50px auto;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+#tasks-ctnr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+#tasks-ctnr-header svg {
+  color: #333;
+}
+
+#tasks-ctnr-header h3 {
+  color: #333;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#tasks-ctnr-header input {
+  padding: 15px;
+  width: 60%;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+#task-add-form {
+  padding: 10px 20px;
+  display: flex;
+}
+
+#task-add-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
+#tasks {
+  padding: 5px 20px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task h3 {
+  margin-left: 10px;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  color: #333;
+  cursor: pointer;
+}
+
+.no-task {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.high {
+  color: red !important;
+}
+
+.medium {
+  color: orange !important;
+}
+
+.error {
+  border: 1px solid #f5b7b1 !important;
+}
+
+.error::placeholder {
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.3) !important;
+}

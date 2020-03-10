@@ -90,7 +90,7 @@ function List(props) {
           <input
             type='text'
             placeholder='Search | Add a new list'
-            onChange={e => searchInList(e)}
+            onChange={searchInList}
             className={hasError ? 'error' : ''}
             value={listInput}
           />
